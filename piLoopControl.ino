@@ -4,8 +4,8 @@
 #include "ILI9341_t3.h"
 #include <Adafruit_NeoPixel.h>
 
-#define PIN            23
-#define NUMPIXELS      86
+#define PIN            22
+#define NUMPIXELS      24
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
 //drumPads
@@ -17,12 +17,12 @@ static const uint8_t btnrowpins[NUM_BTN_ROWS]       = {42, 43, 44, 45};
 static int8_t debounce_count[NUM_BTN_COLUMNS][NUM_BTN_ROWS];
 
 //Encoder
-Bounce encBtn = Bounce(0,5);
+Bounce encBtn = Bounce(11,5);
 int encBtnStatus;
 int encPrevBtnStatus;
 unsigned long encHold;
-int encoderPin1 = 1;
-int encoderPin2 = 2;
+int encoderPin1 = 24;
+int encoderPin2 = 12;
 volatile int lastEncoded = 0;
 volatile long encoderValue = 0;
 long lastencoderValue = 0;
@@ -30,16 +30,17 @@ int scaledEncVal;
 int prevScaledEncVal;
 
 //InputTog
-Bounce inputOneBtn = Bounce(7,5);
-Bounce inputTwoBtn = Bounce(8,5);
+Bounce inputOneBtn = Bounce(0,5);
+Bounce inputTwoBtn = Bounce(1,5);
 bool inputOneTog = false;
 bool inputTwoTog = false;
 //transport
-Bounce clearBtn = Bounce(24,5);
+Bounce clearBtn = Bounce(2,5);
 Bounce playStopBtn = Bounce(25,5);
 //bool playStop = false;
 //Inst Select
-Bounce instSelBtn = Bounce(26,5);
+Bounce instSelBtn = Bounce(37,5);
+//Bounce instSelBtn = Bounce(26,5);
 int instNumber;
 bool instSelectMode = false;
 String instName[16] = {
@@ -52,7 +53,7 @@ String instName[16] = {
 Bounce roboDrumBtn = Bounce(27,5);
 
 //LP Buttons
-int lpBtnPins[8] = {28,29,30,33,34,35,36,37};
+int lpBtnPins[8] = {37, 30, 29, 28, 36, 33, 35, 34};
 int lpBtnState[8];
 int lpPrevBtnState[8] = {HIGH};
 Bounce lpBounce[] = {
@@ -116,8 +117,8 @@ uint32_t neoColorOff = pixels.Color(0,0,0);
 
 
 // LCD STUFF
-#define TFT_DC  9
-#define TFT_CS 10
+#define TFT_DC 20
+#define TFT_CS 21
 // Use hardware SPI (on Uno, #13, #12, #11) and the above for CS/DC
 ILI9341_t3 tft = ILI9341_t3(TFT_CS, TFT_DC);
 
@@ -127,20 +128,21 @@ int s1 = 4;
 int s2 = 5;
 int s3 = 6;
 //Mux in "SIG" pin
-int SIG_pin = A0;
+int SIG_pin = 14;
 
-int analogValues[22];
-int analogValuesLag[22];
-String analogStrings[22] = {
+#define NUM_ANALOG (20)
+int analogValues[NUM_ANALOG];
+int analogValuesLag[NUM_ANALOG];
+String analogStrings[NUM_ANALOG] = {
   "A1: ","A2: ","A3: ", "A4: ","A5: ","A6: ","A7: ","A8: ","A9: ","A10: ","A11: ",
-  "A12: ","A13: ","A14: ","A15: ","A16: ","A17: ","A18: ","A19: ","A20: ","A21: ","A22: "
+  "A12: ","A13: ","A14: ","A15: ","A16: ","A17: ","A18: ","A19: ","A20: "
 };
 
 //NintendoScreen
-int yPin1 = A7;
-int xPin2 = A8;
-int yPin2 = A12;
-int xPin1 = A13;
+int yPin1 = 19;
+int xPin2 = 20;
+int yPin2 = A10;
+int xPin1 = A11;
 int touchX;
 int touchY;
 int fxTogOn = 0;
@@ -215,7 +217,7 @@ int readMux(int channel){
 void setup() {
 
   //Btns
-  pinMode(0, INPUT_PULLUP);
+  pinMode(11, INPUT_PULLUP);
   //LPBTNS
   pinMode(28,INPUT_PULLUP);
   pinMode(29,INPUT_PULLUP);
@@ -465,7 +467,7 @@ void loop(void) {
   }
   readTimeTwo = millis();
   //FX and Loop Volume 
-  for(int i = 0; i < 22; i ++){
+  for(int i = 0; i < NUM_ANALOG; i ++){
     if(i<16){
       analogValues[i] = readMux(i);
     }else{
