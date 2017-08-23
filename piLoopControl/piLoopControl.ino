@@ -153,6 +153,7 @@ unsigned long readTimeTwo;
 unsigned long prevReadTimeTwo;
 
 int readX(){
+  if (true) return 900;
   pinMode(yPin1, INPUT);
   pinMode(xPin2, OUTPUT);
   pinMode(yPin2, INPUT);
@@ -163,6 +164,7 @@ int readX(){
 }
 
 int readY(){
+  if (true) return 900;
   pinMode(yPin1, OUTPUT);
   pinMode(xPin2, INPUT);
   pinMode(yPin2, OUTPUT);
