@@ -57,14 +57,14 @@ int lpBtnPins[8] = {37, 30, 29, 28, 36, 33, 35, 34};
 int lpBtnState[8];
 int lpPrevBtnState[8] = {HIGH};
 Bounce lpBounce[] = {
-  Bounce(28,10),
-  Bounce(29,10),
-  Bounce(30,10),
-  Bounce(33,10),
-  Bounce(34,10),
-  Bounce(35,10),
-  Bounce(36,10),
-  Bounce(37,10),
+  Bounce(lpBtnPins[0],10),
+  Bounce(lpBtnPins[1],10),
+  Bounce(lpBtnPins[2],10),
+  Bounce(lpBtnPins[3],10),
+  Bounce(lpBtnPins[4],10),
+  Bounce(lpBtnPins[5],10),
+  Bounce(lpBtnPins[6],10),
+  Bounce(lpBtnPins[7],10),
 };
 unsigned long clearTimstamp;
 
