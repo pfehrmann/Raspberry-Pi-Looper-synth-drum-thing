@@ -134,8 +134,8 @@ int SIG_pin = 14;
 int analogValues[NUM_ANALOG];
 int analogValuesLag[NUM_ANALOG];
 String analogStrings[NUM_ANALOG] = {
-  "A1: ","A2: ","A3: ", "A4: ","A5: ","A6: ","A7: ","A8: ","A9: ","A10: ","A11: ",
-  "A12: ","A13: ","A14: ","A15: ","A16: ","A17: ","A18: ","A19: ","A20: "
+  "A22: ","A4: ","A3: ", "A2: ","A1: ","A17: ","A19: ","A18: ","A9: ","A10: ","A11: ",
+  "A12: ","A13: ","A14: ","A15: ","A16: ","A5: ","A6: ","A7: ","A8: "
 };
 
 //NintendoScreen
@@ -531,7 +531,7 @@ void loop(void) {
   if(instSelBtn.update()){
     if(instSelBtn.fallingEdge()){
       for(int i=0; i<16; i++){
-        pixels.setPixelColor(i+10, pixels.Color(0, 0, 0));
+        pixels.setPixelColor(i, pixels.Color(0, 0, 0));
       }
       drawInstrument(instNumber);
       instSelectMode = true;
@@ -591,57 +591,49 @@ void loop(void) {
     if(instNumber>3){
       if (instNumber == 4 || instNumber == 8 || instNumber == 12){
         for(int i=0; i<16; i++){
-          pixels.setPixelColor(i+10, neoColorArray[0]);
+          pixels.setPixelColor(i, neoColorArray[0]);
         }
       }else if (instNumber == 5 || instNumber == 9 || instNumber == 13){
         for(int i=0; i<16; i++){
-          pixels.setPixelColor(i+10, neoColorArray[1]);
+          pixels.setPixelColor(i, neoColorArray[1]);
         }
       }else if (instNumber == 6 || instNumber == 10 || instNumber == 14){
         for(int i=0; i<16; i++){
-          pixels.setPixelColor(i+10, neoColorArray[2]);
+          pixels.setPixelColor(i, neoColorArray[2]);
         }
       }else{
         for(int i=0; i<16; i++){
-          pixels.setPixelColor(i+10, neoColorArray[3]);
+          pixels.setPixelColor(i, neoColorArray[3]);
         }
       }
     }else{
+      pixels.setPixelColor(0, pixels.Color(0, 255, 0));
+      pixels.setPixelColor(1, pixels.Color(0, 255, 0));
+      pixels.setPixelColor(2, pixels.Color(0, 255, 0));
+      pixels.setPixelColor(8, pixels.Color(0, 255, 0));
+      pixels.setPixelColor(9, pixels.Color(0, 255, 0));
       pixels.setPixelColor(10, pixels.Color(0, 255, 0));
-      pixels.setPixelColor(11, pixels.Color(0, 255, 0));
-      pixels.setPixelColor(12, pixels.Color(0, 255, 0));
-      pixels.setPixelColor(18, pixels.Color(0, 255, 0));
-      pixels.setPixelColor(19, pixels.Color(0, 255, 0));
-      pixels.setPixelColor(20, pixels.Color(0, 255, 0));
 
+      pixels.setPixelColor(4, pixels.Color(0, 255, 255));
+      pixels.setPixelColor(5, pixels.Color(0, 255, 255));
+      pixels.setPixelColor(6, pixels.Color(0, 255, 255));
+      pixels.setPixelColor(12, pixels.Color(0, 255, 255));
+      pixels.setPixelColor(13, pixels.Color(0, 255, 255));
       pixels.setPixelColor(14, pixels.Color(0, 255, 255));
-      pixels.setPixelColor(15, pixels.Color(0, 255, 255));
-      pixels.setPixelColor(16, pixels.Color(0, 255, 255));
-      pixels.setPixelColor(22, pixels.Color(0, 255, 255));
-      pixels.setPixelColor(23, pixels.Color(0, 255, 255));
-      pixels.setPixelColor(24, pixels.Color(0, 255, 255));
 
-      pixels.setPixelColor(13, pixels.Color(255,0,50));
-      pixels.setPixelColor(17, pixels.Color(255,0,50));
-      pixels.setPixelColor(21, pixels.Color(255,0,50));
-      pixels.setPixelColor(25, pixels.Color(255,0,50));
+      pixels.setPixelColor(3, pixels.Color(255,0,50));
+      pixels.setPixelColor(7, pixels.Color(255,0,50));
+      pixels.setPixelColor(11, pixels.Color(255,0,50));
+      pixels.setPixelColor(15, pixels.Color(255,0,50));
 
       //pixels.Color(255,0,50),
 
     }
   }else{
     for(int i=0; i<16; i++){
-      pixels.setPixelColor(i+10, neoColorArray[i]);
+      pixels.setPixelColor(i, neoColorArray[i]);
     }
-    if (instNumber < 4){
-      pixels.setPixelColor(instNumber+22, pixels.Color(blinkBrightness, blinkBrightness, blinkBrightness));
-    }else if(instNumber > 3 && instNumber < 8){
-      pixels.setPixelColor(instNumber+14, pixels.Color(blinkBrightness, blinkBrightness, blinkBrightness));
-    }else if (instNumber > 7 && instNumber < 12){
-      pixels.setPixelColor(instNumber+6, pixels.Color(blinkBrightness, blinkBrightness, blinkBrightness));
-    }else if(instNumber > 11){
-      pixels.setPixelColor(instNumber-2, pixels.Color(blinkBrightness, blinkBrightness, blinkBrightness));
-    }
+    pixels.setPixelColor(instNumber, pixels.Color(blinkBrightness, blinkBrightness, blinkBrightness));
   }
   //Loop Pad Pixes
   blinkBrightness = 128+127*cos(2*PI/500*readTime);
@@ -649,26 +641,26 @@ void loop(void) {
   for(int i=0; i<8; i++){
     if(loopMute[i] == 1){
       if(!ledBlinking[i]){
-        pixels.setPixelColor(i+2, neoColorArray[i]);
+        pixels.setPixelColor(i+16, neoColorArray[i]);
       }else{
         if(lpCurrentlyRec[i]){
-          pixels.setPixelColor(i+2, pixels.Color(blinkBrightness, 0, 0));
+          pixels.setPixelColor(i+16, pixels.Color(blinkBrightness, 0, 0));
         }else{
-          pixels.setPixelColor(i+2, pixels.Color(blinkBrightness, blinkBrightness, 0));
+          pixels.setPixelColor(i+16, pixels.Color(blinkBrightness, blinkBrightness, 0));
         }
       }
     }else{
       if(!ledBlinking[i]){
         if(loopRec[i]){
-          pixels.setPixelColor(i+2, neoColorArrayDim[i]);
+          pixels.setPixelColor(i+16, neoColorArrayDim[i]);
         }else{
-          pixels.setPixelColor(i+2, neoColorOff);
+          pixels.setPixelColor(i+16, neoColorOff);
         }
       }else{
         if(lpCurrentlyRec[i]){
-          pixels.setPixelColor(i+2, pixels.Color(blinkBrightness, 0, 0));
+          pixels.setPixelColor(i+16, pixels.Color(blinkBrightness, 0, 0));
         }else{
-          pixels.setPixelColor(i+2, pixels.Color(blinkBrightness, blinkBrightness, 0));
+          pixels.setPixelColor(i+16, pixels.Color(blinkBrightness, blinkBrightness, 0));
         }
       }
     }
@@ -957,8 +949,8 @@ void drawPosition(int position){
   tft.setCursor(180,30);
   tft.setTextColor(0x07f0);
   tft.print((position%4)+1);
-  pixels.setPixelColor(0, neoColorArray[position%4]);
-  pixels.setPixelColor(1, neoColorArray[position%4]);
+  //pixels.setPixelColor(0, neoColorArray[position%4]);
+  //pixels.setPixelColor(1, neoColorArray[position%4]);
 }
 void drawInputToggle(String input, String onOff){
   if(input.equals("left")){
