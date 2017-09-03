@@ -17,7 +17,8 @@ static const uint8_t btnrowpins[NUM_BTN_ROWS]       = {42, 43, 44, 45};
 static int8_t debounce_count[NUM_BTN_COLUMNS][NUM_BTN_ROWS];
 
 //Encoder
-Bounce encBtn = Bounce(11,5);
+int encBtnPin = 11;
+Bounce encBtn = Bounce(encBtnPin,5);
 int encBtnStatus;
 int encPrevBtnStatus;
 unsigned long encHold;
@@ -68,8 +69,9 @@ Bounce lpBounce[] = {
 };
 unsigned long clearTimstamp;
 
+// Remove Change D11 to D1
 String digitalStrings[8] = {
-  "D1: ","D2: ","D3: ", "D4: ","D5: ","D6: ","D7: ","D8: "
+  "D11: ","D2: ","D3: ", "D4: ","D5: ","D6: ","D7: ","D8: "
 };
 String drumStrings[16] = {
   "Dr1: ","Dr2: ","Dr3: ", "Dr4: ","Dr5: ","Dr6: ","Dr7: ","Dr8: ",
@@ -666,8 +668,9 @@ void loop(void) {
     }
   }
   //Encode Menu
-  encBtnStatus = digitalRead(0);
+  encBtnStatus = digitalRead(encBtnPin);
   if(encBtn.update()){
+    Serial.print("EncBtn: 1");
     if (encBtnStatus == LOW && encPrevBtnStatus == HIGH){
       encHold = millis();
       songMode = true;
