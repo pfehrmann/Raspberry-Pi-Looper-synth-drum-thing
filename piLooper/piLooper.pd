@@ -1,4 +1,4 @@
-#N canvas 517 167 797 396 10;
+#N canvas 516 173 797 396 10;
 #X declare -path ./rj;
 #X obj 23 34 bng 50 250 50 0 lp-trig-1 empty empty 17 7 0 10 -204800
 -1 -1;
@@ -1783,11 +1783,11 @@ milliseconds \, based on samplerate.;
 #X obj 310 293 expr 1 - $f1;
 #X obj 296 59 loadbang;
 #X obj 112 119 hsl 128 15 0 1 0 1 empty empty 'roomsize' 20 8 0 10
--262144 -260097 -1 87 0;
+-262144 -260097 -1 0 0;
 #X obj 127 162 hsl 128 15 0 2.4 0 1 empty empty damp 20 8 0 10 -262144
 -260097 -1 0 0;
 #X obj 157 255 hsl 128 15 0 1 0 1 empty empty wet 20 8 0 10 -262144
--260097 -1 22 0;
+-260097 -1 0 0;
 #X obj 142 205 hsl 128 15 0 1 0 1 empty empty dry 20 8 0 10 -262144
 -260097 -1 12678 0;
 #N canvas 526 279 634 321 vfreeverb~ 0;
@@ -3285,13 +3285,13 @@ milliseconds \, based on samplerate.;
 #X obj 891 82 vsl 15 128 1 3000 0 0 envAttack empty empty 0 -9 0 10
 -262144 -1 -1 0 1;
 #X obj 917 82 vsl 15 128 1 3000 0 0 envDecay empty empty 0 -9 0 10
--262144 -1 -1 1200 1;
+-262144 -1 -1 0 1;
 #X obj 938 82 vsl 15 128 0 1 0 0 envSustain empty empty 0 -9 0 10 -262144
--1 -1 1400 1;
+-1 -1 0 1;
 #X obj 963 82 vsl 15 128 1 3000 0 0 envRelease empty empty 0 -9 0 10
--262144 -1 -1 5500 1;
+-262144 -1 -1 0 1;
 #X obj 282 82 vsl 15 128 0 10 0 0 lfoOneFreq empty empty 0 -9 0 10
--4032 -1 -1 700 1;
+-4032 -1 -1 0 1;
 #X obj 101 82 vsl 15 127 1 2000 0 0 fmOpOneAmt empty empty 0 -9 0 10
 -4032 -1 -1 0 1;
 #X obj 150 82 vsl 15 127 1 3000 0 0 fmOpOneAttack empty empty 0 -9
@@ -3299,9 +3299,9 @@ milliseconds \, based on samplerate.;
 #X obj 180 82 vsl 15 127 1 3000 0 0 fmOpOneDecay empty empty 0 -9 0
 10 -204800 -1 -1 0 1;
 #X obj 210 82 vsl 15 127 1 3000 0 0 fmOpOneSustain empty empty 0 -9
-0 10 -204800 -1 -1 2100 1;
+0 10 -204800 -1 -1 0 1;
 #X obj 240 82 vsl 15 127 1 3000 0 0 fmOpOneRelease empty empty 0 -9
-0 10 -204800 -1 -1 5000 1;
+0 10 -204800 -1 -1 0 1;
 #N canvas 385 158 397 250 opPitch 0;
 #X msg 195 119 1.5;
 #X msg 225 119 2;
@@ -3343,15 +3343,15 @@ milliseconds \, based on samplerate.;
 #X obj 428 78 vradio 15 1 0 10 empty empty empty 0 -8 0 10 -262130
 -1 -1 9;
 #X obj 501 82 vsl 15 127 1 2000 0 0 fmOpTwoAmt empty empty 0 -9 0 10
--257985 -1 -1 4100 1;
+-257985 -1 -1 0 1;
 #X obj 550 82 vsl 15 127 1 3000 0 0 fmOpTwoAttack empty empty 0 -9
 0 10 -262130 -1 -1 0 1;
 #X obj 580 82 vsl 15 127 1 3000 0 0 fmOpTwoDecay empty empty 0 -9 0
-10 -262130 -1 -1 3000 1;
+10 -262130 -1 -1 0 1;
 #X obj 610 82 vsl 15 127 1 3000 0 0 fmOpTwoSustain empty empty 0 -9
-0 10 -262130 -1 -1 2500 1;
+0 10 -262130 -1 -1 0 1;
 #X obj 640 82 vsl 15 127 1 3000 0 0 fmOpTwoRelease empty empty 0 -9
-0 10 -262130 -1 -1 5100 1;
+0 10 -262130 -1 -1 0 1;
 #X obj 88 277 inlet;
 #X obj 153 277 inlet;
 #X obj 218 277 inlet;
@@ -3414,16 +3414,16 @@ milliseconds \, based on samplerate.;
 #X obj 800 294 loadbang;
 #X obj 800 388 s snap;
 #X obj 322 82 vsl 15 128 0 0.05 0 0 lfoOneAmt empty empty 0 -9 0 10
--4032 -1 -1 4200 1;
+-4032 -1 -1 0 1;
 #X obj 692 82 vsl 15 128 0 10 0 0 lfoTwoFreq empty empty 0 -9 0 10
--257985 -1 -1 8600 1;
+-257985 -1 -1 0 1;
 #X obj 732 82 vsl 15 128 0 0.05 0 0 lfoTwoAmt empty empty 0 -9 0 10
--257985 -1 -1 3000 1;
+-257985 -1 -1 0 1;
 #X obj 28 13 r fmPresets;
 #X obj 60 86 vsl 15 128 0.125 20 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 1013 145 vsl 15 128 0 10 0 0 crossMod empty empty 0 -9 0 10
--262144 -1 -1 4400 1;
+-262144 -1 -1 0 1;
 #X obj 218 308 fmVoice 4;
 #X obj 153 308 fmVoice 3;
 #X obj 16 308 fmVoice 1, f 10;
@@ -3431,7 +3431,7 @@ milliseconds \, based on samplerate.;
 #X obj 28 47 unpack f f f f f f f f f f f f f f f f f f f f f f, f
 154;
 #X obj 842 116 vsl 15 128 0 1 0 0 envAttackLev empty empty 0 -9 0 10
--262144 -1 -1 2200 1;
+-262144 -1 -1 0 1;
 #X obj 882 363 print;
 #X obj 800 317 delay 120;
 #X connect 0 0 40 0;
@@ -3723,7 +3723,7 @@ milliseconds \, based on samplerate.;
 #X connect 54 1 55 0;
 #X restore 99 131 pd BASS;
 #X obj 12 11 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 4300 1;
+-1 -1 0 1;
 #X obj 39 15 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 264 195 declare -path ./rj;
