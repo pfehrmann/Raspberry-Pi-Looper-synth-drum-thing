@@ -1,4 +1,4 @@
-#N canvas 2 588 797 396 10;
+#N canvas 2 594 797 396 10;
 #X obj 23 34 bng 50 250 50 0 lp-trig-1 empty empty 17 7 0 10 -204800
 -1 -1;
 #N canvas 140 404 787 142 clearAll 0;
@@ -3259,25 +3259,25 @@ milliseconds \, based on samplerate.;
 #X obj 28 78 vradio 15 1 0 10 empty empty empty 0 -8 0 10 -204800 -1
 -1 2;
 #X obj 891 82 vsl 15 128 1 3000 0 0 envAttack empty empty 0 -9 0 10
--262144 -1 -1 4300 1;
+-262144 -1 -1 0 1;
 #X obj 917 82 vsl 15 128 1 3000 0 0 envDecay empty empty 0 -9 0 10
--262144 -1 -1 1300 1;
+-262144 -1 -1 0 1;
 #X obj 938 82 vsl 15 128 0 1 0 0 envSustain empty empty 0 -9 0 10 -262144
--1 -1 2200 1;
+-1 -1 0 1;
 #X obj 963 82 vsl 15 128 1 3000 0 0 envRelease empty empty 0 -9 0 10
--262144 -1 -1 6000 1;
+-262144 -1 -1 0 1;
 #X obj 282 82 vsl 15 128 0 10 0 0 lfoOneFreq empty empty 0 -9 0 10
--4032 -1 -1 1000 1;
+-4032 -1 -1 0 1;
 #X obj 101 82 vsl 15 127 1 2000 0 0 fmOpOneAmt empty empty 0 -9 0 10
--4032 -1 -1 2300 1;
+-4032 -1 -1 0 1;
 #X obj 150 82 vsl 15 127 1 3000 0 0 fmOpOneAttack empty empty 0 -9
-0 10 -204800 -1 -1 4400 1;
+0 10 -204800 -1 -1 0 1;
 #X obj 180 82 vsl 15 127 1 3000 0 0 fmOpOneDecay empty empty 0 -9 0
-10 -204800 -1 -1 2100 1;
+10 -204800 -1 -1 0 1;
 #X obj 210 82 vsl 15 127 1 3000 0 0 fmOpOneSustain empty empty 0 -9
-0 10 -204800 -1 -1 1300 1;
+0 10 -204800 -1 -1 0 1;
 #X obj 240 82 vsl 15 127 1 3000 0 0 fmOpOneRelease empty empty 0 -9
-0 10 -204800 -1 -1 5500 1;
+0 10 -204800 -1 -1 0 1;
 #N canvas 385 158 397 250 opPitch 0;
 #X msg 195 119 1.5;
 #X msg 225 119 2;
@@ -3319,15 +3319,15 @@ milliseconds \, based on samplerate.;
 #X obj 428 78 vradio 15 1 0 10 empty empty empty 0 -8 0 10 -262130
 -1 -1 6;
 #X obj 501 82 vsl 15 127 1 2000 0 0 fmOpTwoAmt empty empty 0 -9 0 10
--257985 -1 -1 6000 1;
+-257985 -1 -1 0 1;
 #X obj 550 82 vsl 15 127 1 3000 0 0 fmOpTwoAttack empty empty 0 -9
-0 10 -262130 -1 -1 5600 1;
+0 10 -262130 -1 -1 0 1;
 #X obj 580 82 vsl 15 127 1 3000 0 0 fmOpTwoDecay empty empty 0 -9 0
-10 -262130 -1 -1 11600 1;
+10 -262130 -1 -1 0 1;
 #X obj 610 82 vsl 15 127 1 3000 0 0 fmOpTwoSustain empty empty 0 -9
-0 10 -262130 -1 -1 1600 1;
+0 10 -262130 -1 -1 0 1;
 #X obj 640 82 vsl 15 127 1 3000 0 0 fmOpTwoRelease empty empty 0 -9
-0 10 -262130 -1 -1 4800 1;
+0 10 -262130 -1 -1 0 1;
 #X obj 88 277 inlet;
 #X obj 153 277 inlet;
 #X obj 218 277 inlet;
@@ -3390,16 +3390,16 @@ milliseconds \, based on samplerate.;
 #X obj 800 294 loadbang;
 #X obj 800 388 s snap;
 #X obj 322 82 vsl 15 128 0 0.05 0 0 lfoOneAmt empty empty 0 -9 0 10
--4032 -1 -1 3300 1;
+-4032 -1 -1 0 1;
 #X obj 692 82 vsl 15 128 0 10 0 0 lfoTwoFreq empty empty 0 -9 0 10
--257985 -1 -1 500 1;
+-257985 -1 -1 0 1;
 #X obj 732 82 vsl 15 128 0 0.05 0 0 lfoTwoAmt empty empty 0 -9 0 10
--257985 -1 -1 800 1;
+-257985 -1 -1 0 1;
 #X obj 28 13 r fmPresets;
 #X obj 60 86 vsl 15 128 0.125 20 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 1013 145 vsl 15 128 0 10 0 0 crossMod empty empty 0 -9 0 10
--262144 -1 -1 100 1;
+-262144 -1 -1 0 1;
 #X obj 218 308 fmVoice 4;
 #X obj 153 308 fmVoice 3;
 #X obj 16 308 fmVoice 1, f 10;
@@ -3407,7 +3407,7 @@ milliseconds \, based on samplerate.;
 #X obj 28 47 unpack f f f f f f f f f f f f f f f f f f f f f f, f
 154;
 #X obj 842 116 vsl 15 128 0 1 0 0 envAttackLev empty empty 0 -9 0 10
--262144 -1 -1 2500 1;
+-262144 -1 -1 0 1;
 #X obj 882 363 print;
 #X obj 800 317 delay 120;
 #X connect 0 0 40 0;
@@ -4046,7 +4046,7 @@ milliseconds \, based on samplerate.;
 #X obj 153 78 loopSave 7;
 #X obj 222 78 loopSave 8;
 #X restore 469 34 pd saveLoad;
-#N canvas 244 345 978 489 serialControls 0;
+#N canvas 243 351 978 489 serialControls 1;
 #X obj 836 324 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 836 344 s stop;
