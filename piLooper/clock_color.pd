@@ -1,0 +1,14 @@
+#N canvas 872 357 450 300 10;
+#X obj 33 30 inlet;
+#X obj 109 30 inlet;
+#X msg 33 57 color 43;
+#X msg 108 58 color 44;
+#X obj 33 90 s \$1;
+#X obj 171 29 loadbang;
+#X obj 241 29 r clearAll;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 5 0 3 0;
+#X connect 6 0 3 0;
