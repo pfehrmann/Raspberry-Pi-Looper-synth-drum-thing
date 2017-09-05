@@ -1,5 +1,5 @@
-#N canvas 2 101 465 260 10;
-#N canvas 2 95 465 260 gui 0;
+#N canvas 304 133 646 450 10;
+#N canvas 861 74 886 564 gui 0;
 #X obj 120 24 piLooper;
 #X obj 100 100 cnv 15 480 320 empty empty empty 20 12 0 14 -33289 -66577
 0;
@@ -64,7 +64,7 @@
 #X connect 1 15 5 0;
 #X connect 1 15 4 1;
 #X restore 614 40 pd clockGUI;
-#X obj 395 110 cnv 15 100 50 empty empty BPM: 0 24 0 28 -33289 -192512
+#X obj 414 110 cnv 15 100 50 empty empty BPM: 0 24 0 28 -33289 -192512
 0;
 #N canvas 1191 302 450 300 BPM_gui 0;
 #X obj 45 13 r bpm_gui;
@@ -75,7 +75,7 @@
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X restore 614 69 pd BPM_gui;
-#X obj 467 109 cnv 15 100 50 empty gui_bpm_label "0" 0 24 0 28 -33289
+#X obj 486 109 cnv 15 100 50 empty gui_bpm_label "0" 0 24 0 28 -33289
 -192512 0;
 #X obj 174 150 cnv 10 10 10 empty bar_1_color empty 20 12 0 14 -260818
 -262144 0;
@@ -85,5 +85,7 @@
 -262144 0;
 #X obj 387 150 cnv 10 10 10 empty bar_4_color empty 20 12 0 14 -260818
 -262144 0;
+#X obj 320 261 bng 50 250 50 0 clearAll empty empty 17 7 0 10 -262144
+-1 -1;
 #X coords 0 -1 1 1 480 320 1 100 100;
-#X restore 0 0 pd gui;
+#X restore 0 -1 pd gui;
