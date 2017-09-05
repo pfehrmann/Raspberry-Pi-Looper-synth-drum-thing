@@ -75,7 +75,7 @@
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X restore 614 69 pd BPM_gui;
-#X obj 486 109 cnv 15 100 50 empty gui_bpm_label "0" 0 24 0 28 -33289
+#X obj 486 109 cnv 15 94 50 empty gui_bpm_label 0 0 24 0 28 -33289
 -192512 0;
 #X obj 174 150 cnv 10 10 10 empty bar_1_color empty 20 12 0 14 -260818
 -262144 0;
