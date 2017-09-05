@@ -1,5 +1,5 @@
-#N canvas 434 182 511 347 10;
-#N canvas 436 203 953 550 gui 1;
+#N canvas 2 101 465 260 10;
+#N canvas 2 95 465 260 gui 0;
 #X obj 120 24 piLooper;
 #X obj 100 100 cnv 15 480 320 empty empty empty 20 12 0 14 -33289 -66577
 0;
@@ -7,7 +7,7 @@
 -262144 0;
 #X obj 191 110 cnv 15 50 50 empty pos1_color empty 20 12 0 14 -260818
 -262144 0;
-#X obj 262 110 cnv 15 50 50 empty pos2_color empty 20 12 0 14 -258699
+#X obj 262 110 cnv 15 50 50 empty pos2_color empty 20 12 0 14 -260818
 -262144 0;
 #X obj 333 110 cnv 15 50 50 empty pos3_color empty 20 12 0 14 -260818
 -262144 0;
@@ -75,7 +75,7 @@
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X restore 614 69 pd BPM_gui;
-#X obj 467 109 cnv 15 100 50 empty gui_bpm_label "109" 0 24 0 28 -33289
+#X obj 467 109 cnv 15 100 50 empty gui_bpm_label "0" 0 24 0 28 -33289
 -192512 0;
 #X obj 174 150 cnv 10 10 10 empty bar_1_color empty 20 12 0 14 -260818
 -262144 0;
@@ -83,7 +83,7 @@
 -262144 0;
 #X obj 316 150 cnv 10 10 10 empty bar_3_color empty 20 12 0 14 -260818
 -262144 0;
-#X obj 387 150 cnv 10 10 10 empty bar_4_color empty 20 12 0 14 -258699
+#X obj 387 150 cnv 10 10 10 empty bar_4_color empty 20 12 0 14 -260818
 -262144 0;
 #X coords 0 -1 1 1 480 320 1 100 100;
-#X restore 8 10 pd gui;
+#X restore 0 0 pd gui;
