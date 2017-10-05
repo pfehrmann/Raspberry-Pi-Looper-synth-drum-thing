@@ -1,5 +1,5 @@
-#N canvas 305 291 1154 602 10;
-#N canvas 899 280 886 564 gui 0;
+#N canvas 139 210 1154 604 10;
+#N canvas 181 145 886 564 gui 0;
 #X obj 7 5 piLooper;
 #X obj 100 100 cnv 15 480 320 empty empty empty 20 12 0 14 -33289 -66577
 0;
@@ -95,5 +95,47 @@
 -1 -1;
 #X obj 110 385 cnv 15 85 25 empty empty Reset 0 12 0 28 -33289 -192512
 0;
+#X obj 221 385 bng 25 250 50 0 play empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 243 385 bng 25 250 50 0 play empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 265 385 bng 25 250 50 0 play empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 221 385 cnv 15 69 25 empty empty Play 0 12 0 28 -33289 -192512
+0;
+#X obj 311 385 bng 25 250 50 0 stop empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 333 385 bng 25 250 50 0 stop empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 355 385 bng 25 250 50 0 stop empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 311 385 cnv 15 69 25 empty empty Stop 0 12 0 28 -33289 -192512
+0;
+#N canvas 365 367 694 534 song_menu 0;
+#X obj 325 18 bng 40 250 50 0 empty empty Next_Song 17 7 0 10 -262144
+-1 -1;
+#X obj 64 19 bng 40 250 50 0 empty empty Previous_Song 17 7 0 10 -262144
+-1 -1;
+#X obj 114 20 cnv 15 200 40 empty song_name empty 20 12 0 14 -233017
+-66577 0;
+#X obj 130 105 bng 40 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 130 150 s selectSong;
+#X obj 136 183 r shellOut;
+#X obj 126 381 print;
+#X msg 239 202 0;
+#X obj 78 314 cyclone/zl nth;
+#X floatatom 182 247 5 0 0 0 - - -, f 5;
+#X obj 216 314 cyclone/zl len;
+#X connect 1 0 3 0;
+#X connect 3 0 4 0;
+#X connect 5 0 8 0;
+#X connect 5 0 10 0;
+#X connect 8 0 6 0;
+#X connect 9 0 8 1;
+#X connect 10 0 6 0;
+#X restore 8 91 pd song_menu;
+#X obj 415 138 cnv 15 100 15 empty instrument_name_rec Pad_3 0 12 0
+14 -33289 -192512 0;
 #X coords 0 -1 1 1 480 320 1 100 100;
 #X restore 1 -1 pd gui;

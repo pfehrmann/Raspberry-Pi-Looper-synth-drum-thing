@@ -1,4 +1,4 @@
-#N canvas 2 594 797 396 10;
+#N canvas 327 268 797 396 10;
 #X obj 23 34 bng 50 250 50 0 lp-trig-1 empty empty 17 7 0 10 -204800
 -1 -1;
 #N canvas 140 404 787 142 clearAll 0;
@@ -38,7 +38,7 @@
 -1 -1;
 #X obj 414 34 bng 15 250 50 0 clear-4 empty empty 17 7 0 10 -258113
 -1 -1;
-#N canvas 221 188 1067 624 MIDI-IO 0;
+#N canvas 220 194 1067 624 MIDI-IO 0;
 #X obj 28 67 ctlin 1 16;
 #X obj 28 112 s f;
 #X obj 108 133 s trig;
@@ -148,7 +148,7 @@ by incoming ctrls, f 28;
 #X connect 52 0 41 0;
 #X connect 53 0 14 0;
 #X restore 468 111 pd MIDI-IO;
-#N canvas 777 180 430 673 audio-IO 0;
+#N canvas 776 186 430 673 audio-IO 1;
 #X obj 184 506 dac~;
 #X obj 118 80 s~ input;
 #X obj 184 28 r~ lp-out-1;
@@ -1301,9 +1301,9 @@ milliseconds \, based on samplerate.;
 #X connect 13 0 15 0;
 #X connect 16 0 0 0;
 #X restore 184 218 pd post-loop-fx;
-#N canvas 930 210 746 761 drums-input-fx 0;
+#N canvas 929 216 746 761 drums-input-fx 1;
 #X obj 262 734 outlet~;
-#N canvas 116 102 1280 379 ss 0;
+#N canvas 115 108 1280 379 ss 0;
 #X text 20 77 Bank One;
 #X text 703 78 Bank Two;
 #X obj 317 266 outlet~;
@@ -1788,7 +1788,7 @@ milliseconds \, based on samplerate.;
 #X obj 157 255 hsl 128 15 0 1 0 1 empty empty wet 20 8 0 10 -262144
 -260097 -1 0 0;
 #X obj 142 205 hsl 128 15 0 1 0 1 empty empty dry 20 8 0 10 -262144
--260097 -1 12678 0;
+-260097 -1 10669 0;
 #N canvas 526 279 634 321 vfreeverb~ 0;
 #N canvas 261 50 778 367 combfilters-left1 0;
 #X obj 46 244 +~;
@@ -2576,7 +2576,7 @@ milliseconds \, based on samplerate.;
 #X obj 14 588 s comPortMsg;
 #X msg 3 463 print -inp_left_\$1/;
 #X msg 133 463 print -inp_right_\$1/;
-#N canvas 75 50 427 573 reTrigger 0;
+#N canvas 74 59 427 573 reTrigger 0;
 #X obj 32 93 inlet~;
 #X obj 41 526 outlet~;
 #X obj 32 210 s~ dryGlitchPre;
@@ -2886,7 +2886,7 @@ milliseconds \, based on samplerate.;
 #X connect 16 0 11 0;
 #X connect 17 0 12 0;
 #X restore 262 431 pd reTrigger;
-#N canvas 2 79 1809 891 instrumentSelector 0;
+#N canvas 478 102 1155 675 instrumentSelector 0;
 #X obj 152 178 *~;
 #X obj 167 157 line~;
 #X msg 167 127 1 10;
@@ -2914,7 +2914,7 @@ milliseconds \, based on samplerate.;
 #X obj 36 97 loadbang;
 #X obj 230 542 outlet~;
 #X obj 12 13 r bankSelect;
-#X floatatom 12 40 5 0 0 0 - - -, f 5;
+#X floatatom 12 39 5 0 0 0 - - -, f 5;
 #X obj 36 147 s bankSelect;
 #X obj 577 11 inlet~;
 #X obj 577 178 *~;
@@ -2976,9 +2976,30 @@ milliseconds \, based on samplerate.;
 #X msg 1430 507 4 762.524 1 1809.92 286.619 834.056 0.944882 0.00551181
 5 1016.37 1 1262.48 167.611 239.016 7.87402 0.0023622 1 544.126 0.15748
 803.882 0.944882 0.307087, f 127;
-#X obj 777 97 sel 5 6 7 9 10 11 14 15;
 #X msg 1789 169 0.5;
 #X obj 1759 123 sel 6 10 14;
+#X obj 664 487 s instrument_name_rec;
+#X msg 665 381 label Kit_1;
+#X msg 665 404 label Kit_2;
+#X obj 811 316 sel 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
+#X msg 665 427 label Kit_3;
+#X msg 665 449 label Kit_4;
+#X obj 834 487 s instrument_name_rec;
+#X msg 835 381 label Lead_1;
+#X msg 835 404 label Pad_1;
+#X msg 835 427 label Bass_1;
+#X msg 835 449 label Keys_1;
+#X obj 994 487 s instrument_name_rec;
+#X obj 1154 487 s instrument_name_rec;
+#X msg 995 381 label Lead_2;
+#X msg 995 404 label Pad_2;
+#X msg 995 427 label Bass_2;
+#X msg 995 449 label Keys_2;
+#X msg 1155 381 label Lead_3;
+#X msg 1155 404 label Pad_3;
+#X msg 1155 427 label Bass_3;
+#X msg 1155 449 label Keys_3;
+#X obj 777 97 sel 5 6 7 9 10 11 14 15 13;
 #X connect 0 0 25 0;
 #X connect 1 0 0 1;
 #X connect 2 0 1 0;
@@ -3016,7 +3037,8 @@ milliseconds \, based on samplerate.;
 #X connect 27 0 41 0;
 #X connect 27 0 54 0;
 #X connect 27 0 62 0;
-#X connect 27 0 72 0;
+#X connect 27 0 77 0;
+#X connect 27 0 95 0;
 #X connect 29 0 30 0;
 #X connect 30 0 25 0;
 #X connect 31 0 30 1;
@@ -3036,7 +3058,7 @@ milliseconds \, based on samplerate.;
 #X connect 45 0 35 0;
 #X connect 46 0 28 0;
 #X connect 47 0 48 0;
-#X connect 47 0 74 0;
+#X connect 47 0 73 0;
 #X connect 48 0 49 0;
 #X connect 49 0 63 0;
 #X connect 49 1 64 0;
@@ -3067,20 +3089,53 @@ milliseconds \, based on samplerate.;
 #X connect 69 0 53 0;
 #X connect 70 0 53 0;
 #X connect 71 0 53 0;
-#X connect 72 0 36 0;
-#X connect 72 1 36 0;
-#X connect 72 2 36 0;
-#X connect 72 3 36 0;
-#X connect 72 4 36 0;
-#X connect 72 5 36 0;
-#X connect 72 6 36 0;
-#X connect 72 7 36 0;
-#X connect 72 8 45 0;
-#X connect 73 0 38 0;
-#X connect 74 0 73 0;
-#X connect 74 1 73 0;
-#X connect 74 2 73 0;
-#X connect 74 3 56 0;
+#X connect 72 0 38 0;
+#X connect 73 0 72 0;
+#X connect 73 1 72 0;
+#X connect 73 2 72 0;
+#X connect 73 3 56 0;
+#X connect 75 0 74 0;
+#X connect 76 0 74 0;
+#X connect 77 0 75 0;
+#X connect 77 1 76 0;
+#X connect 77 2 78 0;
+#X connect 77 3 79 0;
+#X connect 77 4 81 0;
+#X connect 77 5 82 0;
+#X connect 77 6 83 0;
+#X connect 77 7 84 0;
+#X connect 77 8 87 0;
+#X connect 77 9 88 0;
+#X connect 77 10 89 0;
+#X connect 77 11 90 0;
+#X connect 77 12 91 0;
+#X connect 77 13 92 0;
+#X connect 77 14 93 0;
+#X connect 77 15 94 0;
+#X connect 78 0 74 0;
+#X connect 79 0 74 0;
+#X connect 81 0 80 0;
+#X connect 82 0 80 0;
+#X connect 83 0 80 0;
+#X connect 84 0 80 0;
+#X connect 87 0 85 0;
+#X connect 88 0 85 0;
+#X connect 89 0 85 0;
+#X connect 90 0 85 0;
+#X connect 91 0 86 0;
+#X connect 92 0 86 0;
+#X connect 93 0 86 0;
+#X connect 94 0 86 0;
+#X connect 95 0 36 0;
+#X connect 95 1 36 0;
+#X connect 95 2 36 0;
+#X connect 95 3 36 0;
+#X connect 95 4 36 0;
+#X connect 95 5 36 0;
+#X connect 95 6 36 0;
+#X connect 95 7 36 0;
+#X connect 95 8 36 0;
+#X connect 95 9 45 0;
 #X restore 235 314 pd instrumentSelector;
 #N canvas 86 123 1092 386 noteSelect 0;
 #X msg 7 32 220 \$1;
@@ -3257,17 +3312,17 @@ milliseconds \, based on samplerate.;
 #X connect 14 0 12 0;
 #X restore 28 234 pd opPitch;
 #X obj 28 78 vradio 15 1 0 10 empty empty empty 0 -8 0 10 -204800 -1
--1 2;
+-1 9;
 #X obj 891 82 vsl 15 128 1 3000 0 0 envAttack empty empty 0 -9 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 4400 1;
 #X obj 917 82 vsl 15 128 1 3000 0 0 envDecay empty empty 0 -9 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 4700 1;
 #X obj 938 82 vsl 15 128 0 1 0 0 envSustain empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 2800 1;
 #X obj 963 82 vsl 15 128 1 3000 0 0 envRelease empty empty 0 -9 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 5400 1;
 #X obj 282 82 vsl 15 128 0 10 0 0 lfoOneFreq empty empty 0 -9 0 10
--4032 -1 -1 0 1;
+-4032 -1 -1 9100 1;
 #X obj 101 82 vsl 15 127 1 2000 0 0 fmOpOneAmt empty empty 0 -9 0 10
 -4032 -1 -1 0 1;
 #X obj 150 82 vsl 15 127 1 3000 0 0 fmOpOneAttack empty empty 0 -9
@@ -3275,9 +3330,9 @@ milliseconds \, based on samplerate.;
 #X obj 180 82 vsl 15 127 1 3000 0 0 fmOpOneDecay empty empty 0 -9 0
 10 -204800 -1 -1 0 1;
 #X obj 210 82 vsl 15 127 1 3000 0 0 fmOpOneSustain empty empty 0 -9
-0 10 -204800 -1 -1 0 1;
+0 10 -204800 -1 -1 300 1;
 #X obj 240 82 vsl 15 127 1 3000 0 0 fmOpOneRelease empty empty 0 -9
-0 10 -204800 -1 -1 0 1;
+0 10 -204800 -1 -1 6500 1;
 #N canvas 385 158 397 250 opPitch 0;
 #X msg 195 119 1.5;
 #X msg 225 119 2;
@@ -3317,17 +3372,17 @@ milliseconds \, based on samplerate.;
 #X connect 11 0 13 0;
 #X restore 428 234 pd opPitch;
 #X obj 428 78 vradio 15 1 0 10 empty empty empty 0 -8 0 10 -262130
--1 -1 6;
+-1 -1 9;
 #X obj 501 82 vsl 15 127 1 2000 0 0 fmOpTwoAmt empty empty 0 -9 0 10
--257985 -1 -1 0 1;
+-257985 -1 -1 400 1;
 #X obj 550 82 vsl 15 127 1 3000 0 0 fmOpTwoAttack empty empty 0 -9
-0 10 -262130 -1 -1 0 1;
+0 10 -262130 -1 -1 4500 1;
 #X obj 580 82 vsl 15 127 1 3000 0 0 fmOpTwoDecay empty empty 0 -9 0
-10 -262130 -1 -1 0 1;
+10 -262130 -1 -1 2400 1;
 #X obj 610 82 vsl 15 127 1 3000 0 0 fmOpTwoSustain empty empty 0 -9
-0 10 -262130 -1 -1 0 1;
+0 10 -262130 -1 -1 500 1;
 #X obj 640 82 vsl 15 127 1 3000 0 0 fmOpTwoRelease empty empty 0 -9
-0 10 -262130 -1 -1 0 1;
+0 10 -262130 -1 -1 2500 1;
 #X obj 88 277 inlet;
 #X obj 153 277 inlet;
 #X obj 218 277 inlet;
@@ -3390,16 +3445,16 @@ milliseconds \, based on samplerate.;
 #X obj 800 294 loadbang;
 #X obj 800 388 s snap;
 #X obj 322 82 vsl 15 128 0 0.05 0 0 lfoOneAmt empty empty 0 -9 0 10
--4032 -1 -1 0 1;
+-4032 -1 -1 2800 1;
 #X obj 692 82 vsl 15 128 0 10 0 0 lfoTwoFreq empty empty 0 -9 0 10
--257985 -1 -1 0 1;
+-257985 -1 -1 4300 1;
 #X obj 732 82 vsl 15 128 0 0.05 0 0 lfoTwoAmt empty empty 0 -9 0 10
--257985 -1 -1 0 1;
+-257985 -1 -1 1400 1;
 #X obj 28 13 r fmPresets;
 #X obj 60 86 vsl 15 128 0.125 20 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 1013 145 vsl 15 128 0 10 0 0 crossMod empty empty 0 -9 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 3400 1;
 #X obj 218 308 fmVoice 4;
 #X obj 153 308 fmVoice 3;
 #X obj 16 308 fmVoice 1, f 10;
@@ -3407,7 +3462,7 @@ milliseconds \, based on samplerate.;
 #X obj 28 47 unpack f f f f f f f f f f f f f f f f f f f f f f, f
 154;
 #X obj 842 116 vsl 15 128 0 1 0 0 envAttackLev empty empty 0 -9 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 4600 1;
 #X obj 882 363 print;
 #X obj 800 317 delay 120;
 #X connect 0 0 40 0;
@@ -3452,7 +3507,7 @@ milliseconds \, based on samplerate.;
 #X connect 42 21 43 0;
 #X connect 45 0 29 0;
 #X restore 318 262 pd fmSynth;
-#N canvas 107 228 516 315 loadSynthThree 0;
+#N canvas 106 234 516 315 loadSynthThree 0;
 #X obj 67 33 inlet;
 #X obj 135 33 inlet;
 #X obj 185 33 inlet;
@@ -4046,7 +4101,7 @@ milliseconds \, based on samplerate.;
 #X obj 153 78 loopSave 7;
 #X obj 222 78 loopSave 8;
 #X restore 469 34 pd saveLoad;
-#N canvas 243 351 978 489 serialControls 1;
+#N canvas 242 357 978 489 serialControls 0;
 #X obj 836 324 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 836 344 s stop;
@@ -4569,7 +4624,7 @@ Dr11: Dr12: Dr13: Dr14: Dr15: Dr16:, f 197;
 -1 -1 0 1;
 #X obj 434 136 vsl 15 70 0 127 0 0 lp-vol-8 empty empty 0 -9 0 10 -261234
 -1 -1 0 1;
-#N canvas 432 355 1028 535 shelCom 0;
+#N canvas 787 362 1028 535 shelCom 0;
 #X msg 135 461 print -sng_\$1/;
 #X obj 135 437 list;
 #X obj 135 486 s comPortMsg;

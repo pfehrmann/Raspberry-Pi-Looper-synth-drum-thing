@@ -155,34 +155,11 @@ unsigned long readTimeTwo;
 unsigned long prevReadTimeTwo;
 
 int readX(){
-  if (true) return 900;
-  pinMode(yPin1, INPUT);
-  pinMode(xPin2, OUTPUT);
-  pinMode(yPin2, INPUT);
-  pinMode(xPin1, OUTPUT);
-  digitalWrite(xPin2, LOW);
-  digitalWrite(xPin1, HIGH);
-  return getSmooth(yPin1);
+  return 900;
 }
 
 int readY(){
-  if (true) return 900;
-  pinMode(yPin1, OUTPUT);
-  pinMode(xPin2, INPUT);
-  pinMode(yPin2, OUTPUT);
-  pinMode(xPin1, INPUT);
-  digitalWrite(yPin1, LOW);
-  digitalWrite(yPin2, HIGH);
-  return getSmooth(xPin2);
-}
-
-int getSmooth(int pin){
-  int vals[10]; //array that stores 10 readings.
-  for(int i = 0; i < 10; i++){
-    vals[i] = analogRead(pin); //takes 10 readings.
-  }
-  float smooth = (vals[0] + vals[1] + vals[2] + vals[3] + vals[4] + vals[5] + vals[6] + vals[7] + vals[8] + vals[9]) / 10;
-  return smooth;
+  return 900;
 }
 
 int readMux(int channel){
