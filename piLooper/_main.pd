@@ -1,9 +1,9 @@
-#N canvas 139 210 1154 604 10;
-#N canvas 181 145 886 564 gui 0;
+#N canvas 138 216 1154 604 10;
+#N canvas 205 234 886 564 gui 0;
 #X obj 7 5 piLooper;
 #X obj 100 100 cnv 15 480 320 empty empty empty 20 12 0 14 -33289 -66577
 0;
-#X obj 120 110 cnv 15 50 50 empty pos0_color empty 20 12 0 14 -260818
+#X obj 120 110 cnv 15 50 50 empty pos0_color empty 20 12 0 14 -258699
 -262144 0;
 #X obj 191 110 cnv 15 50 50 empty pos1_color empty 20 12 0 14 -260818
 -262144 0;
@@ -77,7 +77,7 @@
 #X restore 7 59 pd BPM_gui;
 #X obj 463 121 cnv 15 94 50 empty gui_bpm_label :0 0 0 0 28 -33289
 -192512 0;
-#X obj 174 150 cnv 10 10 10 empty bar_1_color empty 20 12 0 14 -260818
+#X obj 174 150 cnv 10 10 10 empty bar_1_color empty 20 12 0 14 -258699
 -262144 0;
 #X obj 245 150 cnv 10 10 10 empty bar_2_color empty 20 12 0 14 -260818
 -262144 0;
@@ -111,7 +111,7 @@
 -1;
 #X obj 311 385 cnv 15 69 25 empty empty Stop 0 12 0 28 -33289 -192512
 0;
-#N canvas 365 367 694 534 song_menu 0;
+#N canvas 578 186 694 534 song_menu 0;
 #X obj 325 18 bng 40 250 50 0 empty empty Next_Song 17 7 0 10 -262144
 -1 -1;
 #X obj 64 19 bng 40 250 50 0 empty empty Previous_Song 17 7 0 10 -262144
@@ -135,7 +135,23 @@
 #X connect 9 0 8 1;
 #X connect 10 0 6 0;
 #X restore 8 91 pd song_menu;
-#X obj 415 138 cnv 15 100 15 empty instrument_name_rec Pad_3 0 12 0
+#X obj 415 138 cnv 15 100 15 empty instrument_name_rec Kit_1 0 12 0
 14 -33289 -192512 0;
+#X obj 24 423 s notez;
+#X floatatom 34 330 5 0 1 1 - - -, f 5;
+#X obj 118 191 tgl 100 1 empty empty empty 17 7 0 10 -71938 -1 -1 0
+1;
+#X obj 119 192 cnv 15 98 98 empty notez_color empty 20 12 0 14 -92743
+-262144 0;
+#X obj 4 451 sel 0;
+#X obj 60 451 sel 1;
+#X msg 12 521 \; notez_color color -5.80918e+06;
+#X msg 60 474 \; notez_color color -1.60221e+07 0 0;
+#X connect 30 0 29 0;
+#X connect 30 0 33 0;
+#X connect 30 0 34 0;
+#X connect 31 0 30 0;
+#X connect 33 0 35 0;
+#X connect 34 0 36 0;
 #X coords 0 -1 1 1 480 320 1 100 100;
 #X restore 1 -1 pd gui;
