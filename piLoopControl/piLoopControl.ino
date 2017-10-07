@@ -48,9 +48,8 @@ Bounce lpBounce[] = {
 };
 unsigned long clearTimstamp;
 
-// Remove Change D11 to D1
 String digitalStrings[8] = {
-  "D11: ","D2: ","D3: ", "D4: ","D5: ","D6: ","D7: ","D8: "
+  "D1: ","D2: ","D3: ", "D4: ","D5: ","D6: ","D7: ","D8: "
 };
 String drumStrings[16] = {
   "Dr1: ","Dr2: ","Dr3: ", "Dr4: ","Dr5: ","Dr6: ","Dr7: ","Dr8: ",

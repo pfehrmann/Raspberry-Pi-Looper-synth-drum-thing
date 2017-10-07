@@ -1,9 +1,9 @@
-#N canvas 240 217 1154 604 10;
-#N canvas 661 154 886 633 gui 0;
+#N canvas 239 223 1154 604 10;
+#N canvas 660 160 886 633 gui 0;
 #X obj 7 5 piLooper;
 #X obj 100 100 cnv 15 480 320 empty empty empty 20 12 0 14 -33289 -66577
 0;
-#X obj 120 110 cnv 15 50 50 empty pos0_color empty 20 12 0 14 -260818
+#X obj 120 110 cnv 15 50 50 empty pos0_color empty 20 12 0 14 -258699
 -262144 0;
 #X obj 191 110 cnv 15 50 50 empty pos1_color empty 20 12 0 14 -260818
 -262144 0;
@@ -77,7 +77,7 @@
 #X restore 7 59 pd BPM_gui;
 #X obj 463 121 cnv 15 94 50 empty gui_bpm_label :0 0 0 0 28 -33289
 -192512 0;
-#X obj 174 150 cnv 10 10 10 empty bar_1_color empty 20 12 0 14 -260818
+#X obj 174 150 cnv 10 10 10 empty bar_1_color empty 20 12 0 14 -258699
 -262144 0;
 #X obj 245 150 cnv 10 10 10 empty bar_2_color empty 20 12 0 14 -260818
 -262144 0;
@@ -135,7 +135,7 @@
 #X connect 9 0 8 1;
 #X connect 10 0 6 0;
 #X restore 8 91 pd song_menu;
-#X obj 415 138 cnv 15 100 15 empty instrument_name_rec Pad_1 0 12 0
+#X obj 415 138 cnv 15 100 15 empty instrument_name_rec Kit_1 0 12 0
 14 -33289 -192512 0;
 #X obj 24 423 s notez;
 #X floatatom 34 330 5 0 1 1 - - -, f 5;
