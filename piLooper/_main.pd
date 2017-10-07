@@ -1,9 +1,9 @@
-#N canvas 138 216 1154 604 10;
-#N canvas 205 234 886 564 gui 0;
+#N canvas 240 217 1154 604 10;
+#N canvas 661 154 886 633 gui 0;
 #X obj 7 5 piLooper;
 #X obj 100 100 cnv 15 480 320 empty empty empty 20 12 0 14 -33289 -66577
 0;
-#X obj 120 110 cnv 15 50 50 empty pos0_color empty 20 12 0 14 -258699
+#X obj 120 110 cnv 15 50 50 empty pos0_color empty 20 12 0 14 -260818
 -262144 0;
 #X obj 191 110 cnv 15 50 50 empty pos1_color empty 20 12 0 14 -260818
 -262144 0;
@@ -77,7 +77,7 @@
 #X restore 7 59 pd BPM_gui;
 #X obj 463 121 cnv 15 94 50 empty gui_bpm_label :0 0 0 0 28 -33289
 -192512 0;
-#X obj 174 150 cnv 10 10 10 empty bar_1_color empty 20 12 0 14 -258699
+#X obj 174 150 cnv 10 10 10 empty bar_1_color empty 20 12 0 14 -260818
 -262144 0;
 #X obj 245 150 cnv 10 10 10 empty bar_2_color empty 20 12 0 14 -260818
 -262144 0;
@@ -135,23 +135,49 @@
 #X connect 9 0 8 1;
 #X connect 10 0 6 0;
 #X restore 8 91 pd song_menu;
-#X obj 415 138 cnv 15 100 15 empty instrument_name_rec Kit_1 0 12 0
+#X obj 415 138 cnv 15 100 15 empty instrument_name_rec Pad_1 0 12 0
 14 -33289 -192512 0;
 #X obj 24 423 s notez;
 #X floatatom 34 330 5 0 1 1 - - -, f 5;
-#X obj 118 191 tgl 100 1 empty empty empty 17 7 0 10 -71938 -1 -1 0
-1;
-#X obj 119 192 cnv 15 98 98 empty notez_color empty 20 12 0 14 -92743
+#X obj 131 192 tgl 100 1 empty notez_color empty 17 7 0 10 -92743 -262144
+-262144 0 1;
+#X obj 131 192 cnv 15 100 100 empty notez_color empty 20 12 0 14 -92743
 -262144 0;
 #X obj 4 451 sel 0;
 #X obj 60 451 sel 1;
 #X msg 12 521 \; notez_color color -5.80918e+06;
 #X msg 60 474 \; notez_color color -1.60221e+07 0 0;
+#X obj 302 192 tgl 100 0 empty instSelectToggle empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X floatatom 314 443 5 0 0 0 - - -, f 5;
+#X obj 314 472 sel 0;
+#X obj 364 472 sel 1;
+#X obj 378 582 s comPortMsg;
+#X msg 314 505 print -sel_0_1/;
+#X msg 444 505 print -sel_1_1/;
+#X obj 568 438 r bankSelect;
+#X obj 568 460 t b;
+#X msg 568 484 \; instSelectToggle 0;
+#X obj 302 192 cnv 15 100 100 empty instSelColor empty 20 12 0 14 -92743
+-262144 0;
+#X msg 444 529 \; instSelColor color -1.60221e+07 0 0;
+#X msg 313 530 \; instSelColor color -5.80918e+06;
 #X connect 30 0 29 0;
 #X connect 30 0 33 0;
 #X connect 30 0 34 0;
 #X connect 31 0 30 0;
 #X connect 33 0 35 0;
 #X connect 34 0 36 0;
+#X connect 37 0 38 0;
+#X connect 38 0 39 0;
+#X connect 38 0 40 0;
+#X connect 39 0 42 0;
+#X connect 39 0 49 0;
+#X connect 40 0 43 0;
+#X connect 40 0 48 0;
+#X connect 42 0 41 0;
+#X connect 43 0 41 0;
+#X connect 44 0 45 0;
+#X connect 45 0 46 0;
 #X coords 0 -1 1 1 480 320 1 100 100;
 #X restore 1 -1 pd gui;

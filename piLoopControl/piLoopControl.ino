@@ -877,6 +877,21 @@ void loop(void) {
       drawSongName(part2);
     }else if(part1.equals("ply")){
       playStatus = part2.toInt();
+    }else if(part1.equals("sel")){
+      // Selection of instruments
+
+      int mode = part2.toInt();
+      
+      if(mode == 1){
+        for(int i=0; i<16; i++){
+          pixels.setPixelColor(i, pixels.Color(0, 0, 0));
+        }
+        drawInstrument(instNumber);
+        instSelectMode = true;
+      } else {
+        instSelectMode = false;
+        returnToGui(songName);
+      }
     }
 
     serialStarted = false;
